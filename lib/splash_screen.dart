@@ -2,7 +2,7 @@ import 'dart:async';
 import 'main.dart';
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
-
+//This file is used for the splash screen animation
 class SplashScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => StartState();
