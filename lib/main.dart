@@ -7,6 +7,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
     );
@@ -22,7 +25,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('My Home Page')),
+      appBar: AppBar(title:Text("No Smoking App")),
+      body: Center(child: Text('Home Page')),
     );
   }
 }
