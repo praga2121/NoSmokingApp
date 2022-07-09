@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/INTI_Homeworks_Degree/SEM3_(6)/5009CEM Software Development/assignment/No Smoking/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3445" />
         <entry key="..\:/INTI_Homeworks_Degree/SEM3_(6)/5009CEM Software Development/assignment/No Smoking/app/src/main/res/drawable/profile_cover.xml" value="0.3435" />
-        <entry key="..\:/INTI_Homeworks_Degree/SEM3_(6)/5009CEM Software Development/assignment/No Smoking/app/src/main/res/layout/activity_main.xml" value="0.3223958333333333" />
+        <entry key="..\:/INTI_Homeworks_Degree/SEM3_(6)/5009CEM Software Development/assignment/No Smoking/app/src/main/res/drawable/profile_pic.xml" value="0.3445" />
+        <entry key="..\:/INTI_Homeworks_Degree/SEM3_(6)/5009CEM Software Development/assignment/No Smoking/app/src/main/res/drawable/profile_round.xml" value="0.3435" />
+        <entry key="..\:/INTI_Homeworks_Degree/SEM3_(6)/5009CEM Software Development/assignment/No Smoking/app/src/main/res/drawable/smoking_details.xml" value="0.3435" />
+        <entry key="..\:/INTI_Homeworks_Degree/SEM3_(6)/5009CEM Software Development/assignment/No Smoking/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/INTI_Homeworks_Degree/SEM3_(6)/5009CEM Software Development/assignment/No Smoking/app/src/main/res/layout/new_smoking_tips.xml" value="0.3375" />
       </map>
     </option>
   </component>
