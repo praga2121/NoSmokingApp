@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //create firebase storage instance and url to link to the db
-        FirebaseStorage storage = FirebaseStorage.getInstance(
-                "https://console.firebase.google.com/u/0/project/quit-smoking-software-dev/database/quit-smoking-software-dev-default-rtdb/data/~2F"
-        );
+        FirebaseStorage storage = FirebaseStorage.getInstance();
     }
 }
