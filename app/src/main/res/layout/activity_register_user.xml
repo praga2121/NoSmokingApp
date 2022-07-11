@@ -14,7 +14,7 @@
         android:fontFamily="sans-serif-black"
         android:text="No Smoking App"
         android:textAlignment="center"
-        android:textSize="60sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

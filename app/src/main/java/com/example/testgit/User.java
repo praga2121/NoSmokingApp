@@ -1,6 +1,5 @@
 package com.example.testgit;
 
-
 public class User {
     public String fullName,age,email;
 
