@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="401dp"
+        android:layout_height="90dp"
+        android:layout_margin="4dp"
+        android:elevation="4dp"
+        android:backgroundTint="@color/light_peach_brown">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/cardview_default_elevation">
+
+            <TextView
+                android:id="@+id/tv_tipsTitle"
+                android:layout_width="296dp"
+                android:layout_height="88dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="90dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="20dp"
+                android:text="Smoking Tips Title"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_goToPost"
+                android:layout_width="82dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginRight="7dp"
+                android:paddingLeft="@dimen/cardview_default_elevation"
+                android:text=">"
+                android:textAlignment="center"
+                android:textAppearance="?android:textAppearance"
+                android:textSize="35dp"
+                android:paddingTop="5dp"/>
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -17,6 +17,9 @@ public interface NewSmokingTipsDao {
     @Query("SELECT * FROM newSmokingTips")
     List<NewSmokingTipsDB> getAll();
 
+    @Query("SELECT * FROM newSmokingTips WHERE tipsID = :tipsID")
+    NewSmokingTipsDB getTipsFromID(int tipsID);
+
     @Insert(onConflict = 1)
     void insert(NewSmokingTipsDB newSmokingTipsDB);
 

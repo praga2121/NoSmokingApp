@@ -9,8 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_brown">#BD9A7A</color>
     <color name="brown">#6F4E37</color>
-    <color name="peach_brown">#f6cfb6</color>
-    <color name="light_peach_brown">#999999</color>
+    <color name="peach_brown">#EBC9B1</color>
+    <color name="light_peach_brown">#F6E4D1</color>
     <color name="grey_blue">#aad3e3</color>
     <color name="sleep_blue">#3e6594</color>
+    <color name="dark_brown">#2B1E19</color>
 </resources>

@@ -1,25 +1,34 @@
 package com.example.nosmoking;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
+import com.example.nosmokingdb.NoSmokingDatabase;
+
 
 public class MainActivity extends AppCompatActivity {
+    NoSmokingDatabase noSmokingDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //create firebase storage instance and url to link to the db
-        FirebaseStorage storage = FirebaseStorage.getInstance();
+        noSmokingDatabase = Room.databaseBuilder(getApplicationContext(), NoSmokingDatabase.class, "new_smoking_tips").allowMainThreadQueries().build();
+    }
+
+    public void smokingTips_onClick(View view) {
+        Intent intent = new Intent(this, SmokingTips.class);
+        startActivity(intent);
+    }
+
+    public void user_onClick(View view) {
+        Intent intent = new Intent(this, UserSetting.class);
+        startActivity(intent);
     }
 }

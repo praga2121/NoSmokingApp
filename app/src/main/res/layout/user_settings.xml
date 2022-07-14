@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <View
+            android:id="@+id/v_profileCover"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/profile_cover"/>
+
+
+        <ImageView
+            android:id="@+id/iv_userProfile"
+            android:layout_width="102dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/v_profileCover"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.484"
+            app:srcCompat="@drawable/user"
+            android:contentDescription="user profile icon"/>
+
+        <TextView
+            android:id="@+id/grettingMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Hi, User Name"
+            android:textSize="30sp"
+            android:textColor="@color/brown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.317"
+            app:layout_constraintStart_toEndOf="@+id/iv_userProfile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/grettingMessage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:text="How are you today?"
+            android:textColor="@color/brown"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.268"
+            app:layout_constraintStart_toEndOf="@+id/iv_userProfile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_newSmokingTips"
+            android:layout_width="387dp"
+            android:layout_height="74dp"
+            android:layout_marginTop="16dp"
+            android:text="New Smoking Tips                           >>"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_profileCover"
+            android:background="@drawable/settings_button"
+            android:onClick="newSmokingTips_onClick"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

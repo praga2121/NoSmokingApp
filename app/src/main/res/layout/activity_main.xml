@@ -1,93 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
 
-    <View
-        android:id="@+id/v_profileCover"
-        android:layout_width="wrap_content"
-        android:layout_height="160dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/profile_cover"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-
-    <ImageView
-        android:id="@+id/iv_userProfile"
-        android:layout_width="88dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/v_profileCover"
-        app:layout_constraintStart_toStartOf="@+id/v_profileCover"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="user profile pic" />
-
-    <TextView
-        android:id="@+id/grettingMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="44dp"
-        android:text="Hi, User Name"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toEndOf="@+id/iv_userProfile"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/grettingMessage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="84dp"
-        android:text="How are you today?"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
-        app:layout_constraintStart_toEndOf="@+id/iv_userProfile"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/smokingDetails"
-        android:layout_width="347dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_profileCover"
-        android:background="@drawable/smoking_details"/>
-
-    <TextView
-        android:id="@+id/smokingDetails_text"
-        android:layout_width="250dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="5dp"
-        android:text="Smoking Details here...."
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/smokingDetails"
-        app:layout_constraintEnd_toEndOf="@+id/smokingDetails"
-        app:layout_constraintHorizontal_bias="0.764"
-        app:layout_constraintStart_toStartOf="@+id/smokingDetails"
-        app:layout_constraintTop_toTopOf="@+id/smokingDetails" />
+        <View
+            android:id="@+id/v_profileCover"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/profile_cover"/>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="376dp"
-        android:layout_height="365dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/iv_userProfile"
+            android:layout_width="102dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/v_profileCover"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.484"
+            app:srcCompat="@drawable/user"
+            android:onClick="user_onClick"
+            android:contentDescription="user profile"/>
 
+        <TextView
+            android:id="@+id/grettingMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Hi, User Name"
+            android:textSize="30sp"
+            android:textColor="@color/brown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.317"
+            app:layout_constraintStart_toEndOf="@+id/iv_userProfile"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/grettingMessage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:text="How are you today?"
+            android:textSize="20sp"
+            android:textColor="@color/brown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.268"
+            app:layout_constraintStart_toEndOf="@+id/iv_userProfile"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/smokingDetails"
+            android:layout_width="347dp"
+            android:layout_height="158dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_profileCover"
+            android:background="@drawable/smoking_details"/>
+
+        <ImageView
+            android:id="@+id/iv_smokingDetails"
+            android:layout_width="81dp"
+            android:layout_height="103dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/smokingDetails"
+            app:layout_constraintStart_toStartOf="@+id/smokingDetails"
+            app:layout_constraintTop_toTopOf="@+id/smokingDetails"
+            app:layout_constraintVertical_bias="0.4"
+            app:srcCompat="@drawable/smokingdetails"
+            android:contentDescription="smoking details img"/>
+
+        <TextView
+            android:id="@+id/text_smokingDetails"
+            android:layout_width="250dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="5dp"
+            android:text="Smoking Details here...."
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/smokingDetails"
+            app:layout_constraintEnd_toEndOf="@+id/smokingDetails"
+            app:layout_constraintHorizontal_bias="0.764"
+            app:layout_constraintStart_toStartOf="@+id/smokingDetails"
+            app:layout_constraintTop_toTopOf="@+id/smokingDetails" />
+
+        <LinearLayout
+            android:id="@+id/la_achievements"
+            android:layout_width="389dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/smoking_details"
+            android:orientation="horizontal"
+            android:text="Achievements"
+            android:textColor="@color/dark_brown"
+            android:textSize="17dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.272"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/smokingDetails">
+
+            <ImageView
+                android:id="@+id/iv_achievement"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:padding="8dp"
+                app:srcCompat="@drawable/achievement" />
+
+            <TextView
+                android:id="@+id/tv_achievement"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:text="ACHIEVEMENT"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/dark_brown"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/la_smokingTips"
+            android:layout_width="389dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="20dp"
+            android:text="Achievements"
+            android:textSize="17dp"
+            android:textColor="@color/dark_brown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/la_achievements"
+            android:background="@drawable/smoking_details"
+            android:orientation="horizontal"
+            android:onClick="smokingTips_onClick">
+
+            <ImageView
+                android:id="@+id/iv_smokingTips"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:padding="8dp"
+                app:srcCompat="@drawable/tips" />
+
+            <TextView
+                android:id="@+id/tv_smokingTips"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:text="SMOKING TIPS"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/dark_brown"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/la_community"
+            android:layout_width="389dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="20dp"
+            android:text="Achievements"
+            android:textSize="17dp"
+            android:textColor="@color/dark_brown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/la_smokingTips"
+            android:background="@drawable/smoking_details"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_community"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:padding="8dp"
+                app:srcCompat="@drawable/community"/>
+
+            <TextView
+                android:id="@+id/tv_community"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:text="COMMUNITY"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/dark_brown"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/la_getHelp"
+            android:layout_width="389dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="20dp"
+            android:text="Achievements"
+            android:textSize="17dp"
+            android:textColor="@color/dark_brown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/la_community"
+            android:background="@drawable/smoking_details"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_getHelp"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:padding="8dp"
+                app:srcCompat="@drawable/help" />
+
+            <TextView
+                android:id="@+id/tv_getHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="25dp"
+                android:textAlignment="center"
+                android:text="GET HELP"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/dark_brown"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
