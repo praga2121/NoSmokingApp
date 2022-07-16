@@ -1,4 +1,4 @@
-# NoSmokingApp_Home, New Smoking Tips, Get Help
+# NoSmokingApp_Home, New Smoking Tips, Basic User Profile
 
 This branch is for New Smoking Tips, Home and User Profile(Settings)
 
