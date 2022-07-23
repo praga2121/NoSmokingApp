@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".Notify">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="116dp"
-        tools:ignore="MissingConstraints" />
+        android:id="@+id/notify_btn"
+        android:text="Get Notified"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+    </Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
