@@ -1,46 +1,57 @@
 package com.example.nosmoking;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.TextView;
 
-
+import com.example.nosmokingdb.NewSmokingTipsDB;
 import com.example.nosmokingdb.NoSmokingDatabase;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
-    NoSmokingDatabase noSmokingDatabase;
-    private AdView mAdView;
+public class SmokingTips extends AppCompatActivity {
+    private RecyclerView mSmokingTips;
+    private SmokingTipsAdapter mSmokingTipsAdapter;
+
+    public final static int NEW_POST_REQUEST_CODE = 11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.smoking_tips);
 
-        MobileAds.initialize(this, initializationStatus -> {
+        TextView textView = findViewById(R.id.tv_proTips);
+        textView.setPaintFlags(textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        });
+        NoSmokingDatabase noSmokingDatabase = NoSmokingDatabase.getInstance(this);
+        mSmokingTips = findViewById(R.id.rv_smokingTips);
 
-        noSmokingDatabase = Room.databaseBuilder(getApplicationContext(), NoSmokingDatabase.class, "new_smoking_tips").allowMainThreadQueries().build();
+        List<NewSmokingTipsDB> smokingTipsList = noSmokingDatabase.getNewSmokingTipsDao().getAll();
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        mSmokingTipsAdapter = new SmokingTipsAdapter(this, smokingTipsList);
+        mSmokingTips.setAdapter(mSmokingTipsAdapter);
+        mSmokingTips.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    public void smokingTips_onClick(View view) {
-        Intent intent = new Intent(this, SmokingTips.class);
-        startActivity(intent);
-    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == NEW_POST_REQUEST_CODE){
+            if(resultCode == RESULT_OK){
+                NoSmokingDatabase noSmokingDatabase = NoSmokingDatabase.getInstance(this);
+                List<NewSmokingTipsDB> smokingTipsList = noSmokingDatabase.getNewSmokingTipsDao().getAll();
+                mSmokingTipsAdapter = new SmokingTipsAdapter(this, smokingTipsList);
+                mSmokingTips.setAdapter(mSmokingTipsAdapter);
+                mSmokingTips.setLayoutManager(new LinearLayoutManager(this));
+                mSmokingTips.getAdapter().notifyDataSetChanged();
+            }
+        }
 
-    public void user_onClick(View view) {
-        Intent intent = new Intent(this, UserSetting.class);
-        startActivity(intent);
     }
 }
