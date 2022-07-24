@@ -100,6 +100,19 @@
             app:layout_constraintStart_toStartOf="@+id/smokingDetails"
             app:layout_constraintTop_toTopOf="@+id/smokingDetails" />
 
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            app:adSize="SMART_BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/smokingDetails" />
+
         <LinearLayout
             android:id="@+id/la_achievements"
             android:layout_width="389dp"
@@ -113,7 +126,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.272"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/smokingDetails">
+            app:layout_constraintTop_toBottomOf="@+id/adView">
 
             <ImageView
                 android:id="@+id/iv_achievement"
@@ -239,6 +252,7 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:textColor="@color/dark_brown"/>
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
