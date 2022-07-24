@@ -12,12 +12,16 @@ import android.widget.TextView;
 
 import com.example.nosmokingdb.NewSmokingTipsDB;
 import com.example.nosmokingdb.NoSmokingDatabase;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.List;
 
 public class SmokingTips extends AppCompatActivity {
     private RecyclerView mSmokingTips;
     private SmokingTipsAdapter mSmokingTipsAdapter;
+    private AdView mAdView;
 
     public final static int NEW_POST_REQUEST_CODE = 11;
 
@@ -26,7 +30,11 @@ public class SmokingTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.smoking_tips);
 
-        TextView textView = (TextView) findViewById(R.id.tv_proTips);
+        MobileAds.initialize(this, initializationStatus -> {
+
+        });
+
+        TextView textView = findViewById(R.id.tv_proTips);
         textView.setPaintFlags(textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         NoSmokingDatabase noSmokingDatabase = NoSmokingDatabase.getInstance(this);
@@ -37,6 +45,10 @@ public class SmokingTips extends AppCompatActivity {
         mSmokingTipsAdapter = new SmokingTipsAdapter(this, smokingTipsList);
         mSmokingTips.setAdapter(mSmokingTipsAdapter);
         mSmokingTips.setLayoutManager(new LinearLayoutManager(this));
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override

@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.nosmoking"
-        minSdk 22
+        minSdk 31
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -41,4 +41,5 @@ dependencies {
     annotationProcessor 'androidx.room:room-compiler:2.4.2'
     implementation 'androidx.room:room-common:2.4.2'
     implementation 'androidx.room:room-runtime:2.4.2'
+    implementation 'com.google.android.gms:play-services-ads:21.1.0'
 }
