@@ -17,11 +17,14 @@
         android:theme="@style/Theme.NoSmoking"
         tools:targetApi="31">
         <activity
+            android:name=".GetHelp"
+            android:exported="false" />
+        <activity
             android:name=".SmokingTipsPost"
-            android:screenOrientation="portrait"
+            android:exported="true"
             android:parentActivityName=".SmokingTips"
-            tools:ignore="LockedOrientationActivity"
-            android:exported="true" />
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".UserSetting"
             android:exported="true"
