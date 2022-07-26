@@ -1,62 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SmokingTips">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
 
-    <View
-        android:id="@+id/v_smokingTipsBanner"
-        android:layout_width="411dp"
-        android:layout_height="166dp"
-        android:background="@color/peach_brown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/iv_tipsIcon"
-        android:layout_width="118dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="@+id/v_smokingTipsBanner"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tips" />
+        <View
+            android:id="@+id/v_smokingTipsBanner"
+            android:layout_width="411dp"
+            android:layout_height="166dp"
+            android:background="@color/peach_brown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_proTips"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Pro Tips!"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        app:layout_constraintStart_toEndOf="@+id/iv_tipsIcon"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_tipsIcon"
+            android:layout_width="118dp"
+            android:layout_height="121dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/v_smokingTipsBanner"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tips" />
 
-    <TextView
-        android:id="@+id/tv_proTips2"
-        android:layout_width="216dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:textSize="17sp"
-        android:text="Pro tips for stop smoking efficiency here!"
-        app:layout_constraintStart_toEndOf="@+id/iv_tipsIcon"
-        app:layout_constraintTop_toBottomOf="@+id/tv_proTips" />
+        <TextView
+            android:id="@+id/tv_proTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Pro Tips!"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@+id/iv_tipsIcon"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_smokingTips"
-        android:layout_width="381dp"
-        android:layout_height="512dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_smokingTipsBanner"
-        app:layout_constraintVertical_bias="0.315" />
+        <TextView
+            android:id="@+id/tv_proTips2"
+            android:layout_width="216dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:textSize="17sp"
+            android:text="Pro tips for stop smoking efficiency here!"
+            app:layout_constraintStart_toEndOf="@+id/iv_tipsIcon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_proTips" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            app:adSize="SMART_BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            app:layout_constraintBottom_toTopOf="@+id/rv_smokingTips"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_smokingTipsBanner" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_smokingTips"
+            android:layout_width="381dp"
+            android:layout_height="512dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adView"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
